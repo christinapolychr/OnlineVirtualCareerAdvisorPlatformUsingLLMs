@@ -1,0 +1,648 @@
+/* ============================= */
+/* Βασικές Ρυθμίσεις (General Settings) */
+/* ============================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Ενημερωμένη γραμματοσειρά */
+    background: #fff;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ============================= */
+/* Κοινό στυλ για όλα τα κουμπιά */
+/* ============================= */
+.btn-style {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #EE6C29;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-style:hover {
+  background: #7AA6B3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.layout_padding {
+  padding: 90px 0;
+}
+
+/* ============================= */
+/* Background Wrapper με εικόνα */
+/* ============================= */
+.background-wrapper {
+    background-image: url('../images/hero-bg.png'); /* Προσαρμόστε το path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding-top: 80px; /* Χώρος για το fixed nav */
+}
+
+/* ============================= */
+/* Navigation Bar (Μενού Πλοήγησης) */
+/* ============================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #282B2B;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+nav ul li a:hover, .active {
+    color: #EE6C29;
+}
+
+
+
+
+/* ============================= */
+/* Hero Section (Κύρια Ενότητα) */
+/* ============================= */
+.hero-container {
+    position: relative;
+    margin-top: 30px; /* Αντισταθμίζει το fixed nav */
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	min-height: 100vh;
+    padding: 0% 5% 0 5%;
+    background: none;
+}
+
+.hero-text {
+    max-width: -20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600; /* Ελαφρώς πιο λεπτό */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: clamp(16px, 2vw, 18px);
+    margin: 20px 0;
+    line-height: 1.6; /* Βελτίωση αναγνωσιμότητας */
+}
+
+
+/* ============================= */
+/* Εικόνα AI (AI Image Section) */
+/* ============================= */
+.hero-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 60%;
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px;
+	animation: floatAnimation 3s ease-in-out infinite;
+}
+
+/* ====== Κίνηση της εικόνας πάνω-κάτω με χρήση @keyframes ====== */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================= */
+/* Ενότητα Υπηρεσιών (Services Section)
+/* ============================= */
+.services-section {
+    text-align: center;
+    padding: 100px 5%; 
+    background: #fff;
+    color: #282B2B;
+	 position: relative;
+}
+
+.services-section h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 20px;
+    font-weight: 600; 
+	font-weight: bold;
+}
+
+.servises-intro .highlight {
+  color: #EE6C29;
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Περισσότερο κενό μεταξύ καρτών */
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1200px; /* Περιορισμός μέγιστου πλάτους */
+}
+
+.service-card {
+    background: #F8F9FA;
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); 
+    max-width: 320px; 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Προσθήκη transition */
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Εφέ ανύψωσης */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Μεγαλύτερη σκιά στο hover */
+}
+
+.service-card img {
+  width: 200px;
+  min-width: 75px;
+  margin-bottom: 0px;
+  display: block; /* Αυτό αφαιρεί το extra κενό */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+	margin-top: 0px;
+    margin-bottom: 15px;
+    color: #282B2B;
+}
+
+.service-card p {
+    font-size: 1rem; /* Ελαφρώς μεγαλύτερο κείμενο */
+    color: #555;
+    line-height: 1.6; /* Βελτίωση αναγνωσιμότητας */
+}
+
+.read-more {
+    color: #EE6C29; /* Χρήση του accent χρώματος */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #7AA6B3; /* Αλλαγή χρώματος στο hover */
+}
+
+
+/* ============================= */
+/* Ενότητα About Us 
+/* ============================= */
+.about_section {
+  position: relative;
+  background-color: #282B2B;
+  color: #ffffff;
+  padding: 20px 5% 80px;
+  overflow: hidden;
+}
+
+.about-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-intro h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-intro .highlight {
+  color: #EE6C29;
+}
+
+.about-intro p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.img-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+.detail-box {
+  max-width: 600px;
+}
+
+.detail-box h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.detail-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.btn-box {
+  margin-top: 20px;
+}
+
+/* ============================= */
+/* Ενότητα Why Choose Us 
+/* ============================= */
+
+.why_section {
+  background: #fff;
+  color: #000;
+  padding: 100px 5%;
+  text-align: center;
+}
+
+.why_section .heading_container h2 {
+  color: #282B2B;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.heading_container .highlight {
+  color: #EE6C29;
+}
+
+
+.why_section .box {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why_section .box .img-box {
+  margin-bottom: 20px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 100%;
+  border: 5px solid #282B2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why_section .box .img-box img {
+  width: 55px;
+  height: auto;
+}
+
+.why_section .box h5 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.why_section .box p {
+  margin-bottom: 0;
+}
+
+/* ============================= */
+/* Ενότητα Team
+/* ============================= */
+.team_section {
+  text-align: center;
+  background-color: #282B2B;
+  color: #ffffff;
+  padding:30px 0;
+}
+
+.team_section .heading_container{
+	font-size: 24px;
+}
+
+.heading_container .highlight {
+  color: #EE6C29;
+}
+
+.team_container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.team_member {
+  flex: 1 1 21%;
+  max-width: 23%;
+  box-sizing: border-box;
+  margin-top: 45px;
+}
+
+@media (max-width: 992px) {
+  .team_member {
+    flex: 1 1 46%;
+    max-width: 46%;
+  }
+}
+
+@media (max-width: 600px) {
+  .team_member {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.team_container .box {
+  padding: 35px 0 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #3D4242;
+  transition: all 0.3s ease, box-shadow 0.3s ease;/*ΟΜΑΛΗ ΜΕΤΑΒΑΣΗ*/
+  box-shadow: 0 4px 8px rgba(0,0,0, 0.1);/*ΑΡΧΙΚΗ ΔΙΑΚΡΙΤΙΚΗ ΣΚΙΑ*/
+}
+.team_container .box:hover{
+	transform: translateY(-10px);/*ΑΝΥΨΩΣΗ*/
+	box-shadow: 0 12px 24px rgba(0,0,0, 0.2);/*ΠΙΟ ΕΝΤΟΝΗ ΣΚΙΑ*/
+}
+
+.team_container .box .img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team_container .box .img-box img {
+  width: 120px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+}
+
+.team_container .box .detail-box {
+  margin: 25px 0;
+}
+
+.team_container .box .detail-box h4{
+  color: #EE6C29;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.team_container .box .detail-box p {
+  margin: 0;
+  color: #ccc;
+}
+
+.team_container .box .social_box {
+  padding: 10px 45px 20px 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team_container .box .social_box a {
+  color: #EE6C29;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.team_container .box .social_box a:hover {
+  color: #7AA6B3;
+}
+
+/* ============================= */
+/* Info section*/
+/* ============================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .info_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .info_col {
+    flex: 1 1 220px;
+    min-width: 250px;
+  }
+
+  .info_section {
+    background-color: #ffffff;
+    color: #282B2B;
+    padding: 45px 0 15px 0;
+  }
+
+  .info_section h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .info_contact .contact_link_box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact_link_box a {
+    margin: 5px 0;
+    color: #282B2B;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact_link_box a i {
+    margin-right: 5px;
+  }
+
+  .contact_link_box a:hover {
+    color: #EE6C29;
+  }
+
+  .info_social {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .info_social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #282B2B;
+    border-radius: 50%;
+    font-size: 24px;
+  }
+
+  .info_social a:hover {
+    color: #EE6C29;
+  }
+
+  .info_links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info_links a {
+    margin-bottom: 15px;
+    color: #282B2B;
+    display: flex;
+    align-items: center;
+  }
+
+  .info_links a:hover {
+    color: #EE6C29;
+  }
+
+  form input {
+    border: none;
+    border-bottom: 1px solid #282B2B;
+    background-color: transparent;
+    width: 100%;
+    height: 45px;
+    color: #282B2B;
+    outline: none;
+  }
+
+  form input::placeholder {
+    color: #282B2B;
+  }
+
+  form button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #7AA6B3;
+    color: #282B2B;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  form button:hover {
+    background-color: #7AA6B3;
+  }
+
+
+
+
+/* ============================= */
+/* Responsive Adjustments (Προσαρμογές για κινητές συσκευές) */
+/* ============================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 120px 5% 80px;
+    }
+    
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .hero-image {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin-right: 0;
+    }
+
+    .services-section {
+        padding: 60px 5%;
+    }
+    
+    .service-card {
+        max-width: 100%;
+    }
+}

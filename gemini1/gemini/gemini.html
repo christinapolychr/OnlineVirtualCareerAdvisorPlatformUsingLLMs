@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Suggestions</title>
+  <link rel="stylesheet" href="./style.css" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+   <!-- Αρχική Οθόνη -->
+  <div id="startScreen">
+    <button id="askQuestions" class="btn-style">Start General Category Questions</button>
+    <button id="askSpecificQuestions" class="btn-style">Ask Specific Category Questions</button>
+  </div>
+
+<!-- Επιλογή Κατηγορίας -->
+  <div id="categorySelection" class="quiz-container" style="display: none;">
+    
+    <div id="categoryButtons" class="options-container"></div>
+  </div>
+
+ <!-- Chat Screen -->
+  <div id="chatScreen">
+    <div id="output"></div>
+    <div id="responseContainer">
+      <div id="quizContainer">
+        <div id="question" class="question-text">Loading...</div>
+      </div>
+      <div id="options" class="options-container"></div>
+    </div>
+  </div>
+
+  <div id="cvSection"></div>
+
+  <script type="module" src="host.js"></script>
+  <script type="module" src="specificTest.js"></script>
+  <script type="module" src="cv.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startGeneralQuizBtn = document.getElementById('askQuestions');
+      const startSpecificQuizBtn = document.getElementById('askSpecificQuestions');
+      const startScreen = document.getElementById('startScreen');
+      const chatScreen = document.getElementById('chatScreen');
+      const cvSection = document.getElementById('cvSection');
+      const disclaimerFooter = document.getElementById('disclaimerFooter');
+
+      if (!cvSection) {
+        const newCvSection = document.createElement('div');
+        newCvSection.id = 'cvSection';
+        newCvSection.style.display = 'none';
+        document.body.appendChild(newCvSection);
+      }
+
+      startGeneralQuizBtn.addEventListener('click', () => {
+        startScreen.style.display = 'none';
+        chatScreen.style.display = 'flex';
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('cvSection').style.display = 'none';
+        disclaimerFooter.style.display = 'block';
+        window.dispatchEvent(new CustomEvent('startGeneralQuiz'));
+      });
+
+      startSpecificQuizBtn.addEventListener('click', () => {
+        startScreen.style.display = 'none';
+        chatScreen.style.display = 'flex';
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('cvSection').style.display = 'none';
+        disclaimerFooter.style.display = 'block';
+        window.dispatchEvent(new CustomEvent('startSpecificQuiz'));
+      });
+    });
+  </script>
+  <div id="disclaimerFooter" class="disclaimer-footer" >
+        <p>AI can make mistakes, please double check any important information.</p>
+    </div>
+
+    <script type="module" src="host.js"></script>
+</body>
+</html>
